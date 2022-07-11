@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+  <div class="confirm-payment">
+    <img src="image/confirmed.png" alt="">
+    <h1 class="confirmed">Payment Confirmed</h1>
+    <h3 class="order-number">ORDER #2039</h3>
+    <h3 class="thank-you">Thank you for buying from FAST <br /> Your order will be ready to be shipped in 2 days</h3>
+    <button type="button" onclick="location.href='trackOrdersUser'" name="track-order">Track orders</button>
+  </div>
+
+
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+
+</body>
+
+
+</html>

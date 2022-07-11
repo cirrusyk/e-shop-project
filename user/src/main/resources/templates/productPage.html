@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+  <div class="product">
+  <input hidden="hidden" th:field="*{shoes.id}" />
+  
+    <div class="image-product" style="flex:3;">
+      <img th:src="#{adminPath} + @{/image/shoes/} + ${shoes.id} + '.png'">
+    </div>
+ 
+    <div class="product-information" style="flex:2;">
+      <h1 class="name-product" th:text="${shoes.name}"></h1>
+      <p class="description" th:text="${#strings.abbreviate(shoes.description, 500)}"></p>
+        
+        
+        <form th:action="@{/shoppingCart/addItem}" method="post">
+        <div class="size-quantity">
+        <div class="add-quantity">
+        <label class="quantity">Quantity: </label>
+    	<select name="qty">
+    	<option th:each="qty : ${qtyList}" th:value="${qty}" th:text="${qty}">
+    	</option>
+    	</select>
+        </div>
+        
+        <div class="size">
+        <label for="size">Choose size:</label>
+    <select name="size" id="size">
+     <option th:each="sizes : ${#strings.arraySplit(shoes.sizes, ',')}" th:value="${sizes}" th:text="${sizes}">
+      </option>
+    </select>
+        
+        </div>
+        </div>
+        
+        
+        
+        
+    
+    <br><br>
+
+    <h2 class="price" th:text="${#numbers.formatDecimal(shoes.price, 0, 2, 'POINT')} + DHS"></h2>
+    
+    <div class="availability">
+    <h3  style="color: green" th:if="*{shoes.inStockNumber&gt;10}">In Stock</h3>
+    <h3  style="color: green" th:if="*{shoes.inStockNumber&lt;10 and shoes.inStockNumber&gt;0}">Only <span class="span" th:text="${shoes.inStockNumber}"></span> In Stock</h3>
+    <h3  style="color: red" th:if="*{shoes.inStockNumber==0}">Unavailable</h3>
+    
+    </div>
+    
+    <button type="submit" >Add to cart</button>
+  </form>
+    </div>
+
+  </div>
+
+
+
+	
+  <div th:replace="common/header :: chat"></div>
+
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+
+</body>
+
+
+</html>

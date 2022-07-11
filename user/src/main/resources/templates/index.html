@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+<div th:replace="common/header :: navbar"></div>
+
+ <!-- MAIN SECTION -->
+  <div class="commercial">
+    <div class="main-row">
+      <div class="column-text">
+        <h1 class="title-main"><a href="productPage?id=7"><span class="span">nike</span> air huarache</a></h1>
+        <h2 class="desc-main">
+          <a href="productPage?id=7">THE NIKE AIR HUARACHE KEEPS ALLURING AFTER MORE THAN TWO DECADES.</a></h2> 
+        <a href="productPage?id=7"><h3 class="price-main">950.00DHS</h3></a>
+        <button class="main-btn" type="button">Add to cart</button>
+      </div>
+      <div class="column-image">
+        <img src="image/nike-hiarache-main.png" alt="">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="main index">
+    <h1 class="title-section"><a href="newReleases">NEW ARRIVALS</a></h1>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="mySlides">
+
+      <div class="row-section">
+      
+        <div class="column"   data-th-each="shoes,iterStat : ${shoesList}" th:if="${iterStat.index} < 3">
+          <div class="image-product">
+            <a th:href="@{/productPage?id=}+${shoes.id}" ><img th:src="#{adminPath}+@{/image/shoes/} + ${shoes.id} + '.png'" style="width:100%"></a> 
+          </div>
+          <div class="info">
+            <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#strings.toUpperCase(shoes.name)}" class="title-product"> </h2></a>
+           <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#numbers.formatDecimal(shoes.price, 0, 2, 'POINT')} + DHS" class="price-product"></h2></a>       
+           
+         </div> 
+        </div>
+        
+        
+        
+      </div>
+      
+      
+    </div>
+    
+    <div class="mySlides">
+
+      <div class="row-section">
+      
+        <div class="column"   data-th-each="shoes,iterStat : ${shoesList}" th:if="${iterStat.index &gt; 2 and iterStat.index &lt; 6}">
+          <div class="image-product">
+            <a th:href="@{/productPage?id=}+${shoes.id}" ><img th:src="#{adminPath}+@{/image/shoes/} + ${shoes.id} + '.png'" style="width:100%"></a> 
+          </div>
+          <div class="info">
+            <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#strings.toUpperCase(shoes.name)}" class="title-product"> </h2></a>
+           <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#numbers.formatDecimal(shoes.price, 0, 2, 'POINT')} + DHS" class="price-product"></h2></a>       
+           
+         </div> 
+        </div>
+        
+        
+    
+       
+
+      </div>
+    </div>
+    
+    
+    <div class="mySlides">
+
+      <div class="row-section">
+      
+        <div class="column"   data-th-each="shoes,iterStat : ${shoesList}" th:if="${iterStat.index &gt; 5 and iterStat.index &lt; 9}">
+          <div class="image-product">
+            <a th:href="@{/productPage?id=}+${shoes.id}" ><img th:src="#{adminPath}+@{/image/shoes/} + ${shoes.id} + '.png'" style="width:100%"></a> 
+          </div>
+          <div class="info">
+            <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#strings.toUpperCase(shoes.name)}" class="title-product"> </h2></a>
+           <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#numbers.formatDecimal(shoes.price, 0, 2, 'POINT')} + DHS" class="price-product"></h2></a>       
+           
+         </div> 
+        </div>
+        
+        
+    
+       
+
+      </div>
+    </div>
+
+   </div>
+
+
+
+
+
+<div th:replace="common/header :: chat"></div>
+
+<div th:replace="common/header :: body-bottom"></div>
+
+  
+
+</body>
+ 
+
+</html>

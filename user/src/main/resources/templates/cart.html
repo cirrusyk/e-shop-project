@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+  <h1 class="cart-items">Your cart items</h1>
+
+  <div id="cart-page">
+
+    <div class="titles">
+      <div class="column-product" style="flex-grow: 7;">
+        <h3 class="title-cart">Product</h3>
+      </div>
+      <div class="column-price" style="flex-grow: 1;">
+        <h3 class="title-cart">Price</h3>
+      </div>
+      <div class="column-quantiy" style="flex-grow: 1;">
+        <h3 class="title-cart">Quantity</h3>
+      </div>
+      <div class="column-total" style="flex-grow: 1;">
+        <h3 class="title-cart">Total</h3>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="product-cart">
+      <div class="column-product">
+        <img class="img-product" src="image/nike-air-zoom-sup.png" alt="">
+        <div class="info-product">
+          <h2 class="name-poduct">Nike Air Zoom Superrep <span class="size-product">Size 37</span></h2>
+          <h3 class="remove">Remove</h3>
+        </div>
+      </div>
+      <div class="column-price">
+        <h2 class="price-product">950.00DHS</h2>
+      </div>
+      <div class="column-quantiy">
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+
+      </div>
+      <div class="column-total">
+        <h3 class="total-products">950,00DHS</h3>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="product-cart">
+      <div class="column-product">
+        <img class="img-product" src="image/nike-air-zoom-pegasus.png" alt="">
+        <div class="info-product">
+          <h2 class="name-poduct">Nike Air Zoom Pegasus <span class="size-product">Size 38</span></h2>
+          <h3 class="remove">Remove</h3>
+        </div>
+      </div>
+      <div class="column-price">
+        <h2 class="price-product">989.00DHS</h2>
+      </div>
+      <div class="column-quantiy">
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+
+      </div>
+      <div class="column-total">
+        <h3 class="total-products">989,00DHS</h3>
+
+      </div>
+    </div>
+
+    <hr>
+
+      <div class="sub-total">
+        
+        <div class="cart-info">
+          <div class="total">
+            <h2>Sub-total: </h2>
+            <h2 class="total-cart">1889,00DHS</h2>
+            <p>Tax and shipping included</p>
+          </div>
+        </div>
+
+        <div class="button-cart">
+          <button type="button" onclick="location.href='payment'" name="check-out">Check-out</button>
+        </div>
+
+      </div>
+
+  </div>
+
+
+
+  <div th:replace="common/header :: chat"></div>
+
+
+
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+
+</body>
+
+
+</html>

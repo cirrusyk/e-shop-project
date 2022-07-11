@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/headerAdmin :: navbar"></div>
+
+  <div class="main">
+    <h1 class="title-section"><a href="skateShoes">SKATE SHOES</a></h1>
+
+   
+<div class="row-first">
+      <div class="row-section" >
+           
+        
+        <div class="column"  th:each="shoes : ${shoesList}" >
+        
+      
+          <div class="image-product">
+          		<a th:href="@{/deleteProducts(shoesId=${shoes.id})}"><img class="delete" src="image/cross.svg" alt=""></a>
+            <a th:href="@{/shoesInfo(id=${shoes.id})}"><img th:src="@{${'/image/shoes/' + shoes.id  + '.png'}}" style="width:100%"></a>
+          </div>
+
+          <div class="info">
+              <a th:href="@{/shoesInfo(id=${shoes.id})}"><h2 class="title-product" th:text="${#strings.toUpperCase(shoes.name)}"></h2></a>
+    		  <a th:href="@{/shoesInfo(id=${shoes.id})}"><h2 class="price-product" th:text="${#numbers.formatDecimal(shoes.price, 0, 2, 'POINT')} + DHS"></h2></a>
+          </div> 
+                 
+      </div>
+       </div>
+ </div>
+
+
+
+      </div>
+  
+
+    <div class="pages">
+    <a class="prev-page">&#10094;</a>
+    <a class="page active" href="#">1</a>
+    <a class="page" href="#">2</a>
+    <a class="page" href="#">3</a>
+    <a class="next-page">&#10095;</a>
+    </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+  <div th:replace="common/headerAdmin :: body-bottom"></div>
+
+
+
+</body>
+
+
+</html>

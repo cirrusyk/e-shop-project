@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+  <div class="main">
+    <h1 class="title-section"><a href="runningShoes">RUNNING SHOES</a></h1>
+
+     
+<div class="row-first">
+      <div class="row-section" style="flex-wrap: wrap">
+           
+        
+        <div class="column"  th:each="shoes : ${shoesList}" >
+        
+      
+          <div class="image-product">
+          
+            <a th:href="@{/productPage(id=${shoes.id})}"><img  th:src="#{adminPath}+@{/image/shoes/} + ${shoes.id} + '.png'" style="width:100%"></a>
+          </div>
+
+          <div class="info">
+              <a th:href="@{/productPage(id=${shoes.id})}"><h2 class="title-product" th:text="${#strings.toUpperCase(shoes.name)}"></h2></a>
+    		  <a th:href="@{/productPage(id=${shoes.id})}"><h2 class="price-product" th:text="${#numbers.formatDecimal(shoes.price, 0, 2, 'POINT')} + DHS"></h2></a>
+          </div> 
+                 
+      </div>
+       </div>
+ </div>
+
+
+
+      </div>
+ 
+
+    
+
+
+
+
+
+
+  <div th:replace="common/header :: chat"></div>
+
+
+
+
+
+
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+
+</body>
+
+
+</html>

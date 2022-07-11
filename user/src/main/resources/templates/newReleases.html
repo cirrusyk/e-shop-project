@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+  <div class="main">
+  
+  <div class="top">
+  <h1 class="title-section"><a href="#new">NEW ARRIVALS</a></h1>
+    
+  </div>
+    
+
+    <div class="row-first">
+      <div class="row-section" style="flex-wrap: wrap">
+      
+      
+        <div class="column" data-th-each="shoes : ${shoesList}">
+        <div th:if="${shoes != null}">
+        <div class="image-product">
+            <a th:href="@{/productPage?id=}+${shoes.id}" ><img th:src="#{adminPath}+@{/image/shoes/} + ${shoes.id} + '.png'" style="width:100%"></a> 
+          </div>
+          <div class="info">
+             <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#strings.toUpperCase(shoes.name)}" class="title-product"> </h2></a>
+          
+             <a th:href="@{/productPage?id=}+${shoes.id}" ><h2 th:text="${#numbers.formatDecimal(shoes.price, 0, 2, 'POINT')} + DHS" class="price-product"></h2></a>       
+           
+          </div>
+        
+        </div>
+          
+        </div>
+
+      
+      </div>
+    </div>
+
+    
+
+
+
+
+      </div>
+
+
+
+    <div class="pages" id="pagination">
+    
+    
+    </div>
+  
+
+
+
+
+
+
+  <div th:replace="common/header :: chat"></div>
+
+
+
+
+
+
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+	
+
+
+</body>
+
+
+</html>

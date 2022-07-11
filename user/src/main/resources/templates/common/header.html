@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+
+<head th:fragment="common-header" >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FAST Shoes Shop</title>
+  <!-- add icon link -->
+  <link rel="icon" href="image/logo.svg" type="image/x-icon">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+
+ <script src="js/jquery-3.5.1.min.js"></script>
+ 
+    <link rel="stylesheet" href="/css/chat.css">
+   
+
+  <link href="/css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+ <!-- PAGINATION -->
+  <script src="js/jquery.twbsPagination.js"></script>
+  <script src="js/jquery.twbsPagination.min.js"></script>
+  <script src="js/Gruntfile.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+  <!-- Custom styles for this template -->
+
+
+<body>
+
+<div th:fragment="navbar">
+<nav>
+    <div class="navbar">
+      <ul>
+        <li><a href="/"><img src="image/logo.svg" alt=""> </a> </li>
+        <li class="middle">
+          <a th:href="@{/newReleases}">New releases</a>
+         <div class="dropdown">
+  <button class="dropbtn">Shoes</button>
+  <div class="dropdown-content">
+  <a class="droplink" th:href="@{/runningShoes}">Running</a>
+  <a class="droplink" th:href="@{/basketBallShoes}">Basketball</a>
+  <a class="droplink" th:href="@{/skateShoes}">Skate</a>
+  </div>
+</div>
+          <a href="about">About</a>
+          <a href="contact">Contact</a>
+        </li>
+        <li class=account>
+          <a th:href="@{/profile}"><img src="image/account.svg" alt=""> </a>
+          <a href="cart"><img src="image/cart.svg" alt=""></a>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+  </nav>
+
+</div>
+
+
+<div th:fragment="chat">
+
+<div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Chat with us!
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="bottom" th:fragment="body-bottom">
+<footer>
+    <div class="logo-footer">
+      <img class="logof" src="image/logo-white.svg" alt="">
+      <img src="image/brand-name.png" alt="">
+    </div>
+
+    <div class="line"></div>
+
+    <div class="content-footer">
+      <a class="footer-link" href="newReleases">NEW RELEASES</a>
+      <a class="footer-link" href="about">ABOUT</a>
+      <a class="footer-link" href="contact">CONTACT</a>
+    </div>
+
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/responses.js"></script>
+<script src="js/chat.js"></script>
+  
+</div>
+
+
+
+</body>
+</html>

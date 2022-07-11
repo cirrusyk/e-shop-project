@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+
+  <<div class="login-regis">
+
+    <div class="form-login" >
+      <h1>LOGIN</h1>
+      <form method="post" th:action="@{/login}">
+      <!-- error message -->
+      <div th:if= "${param.error}">
+       <div class = "alert alert-error"> Invalid Username or Password.</div>
+       </div>
+       <!-- logout message -->
+        <div th:if= "${param.logout}">
+       <div class = "alert alert-info"> You have been logged out.</div>
+       </div>
+       <!-- success message -->
+       <div th:if= "${param.success}">
+       <div class = "alert alert-info"> Welcome!</div>
+       </div>
+       
+      
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required maxlength=20 minlength= 5 placeholder="*required">
+
+        <label for="mail">Password:</label>
+        <input type="password" id="password" name="password" required maxlength=20 minlength= 5  placeholder="*required">
+
+		
+
+        <button type="submit" name="login">Login</button>
+        <span class="span already">New User? <a href="/" th:href= @{/register}>Register here</a></span>
+      </form>
+
+
+    </div>
+</div>
+
+  <div th:replace="common/header :: chat"></div>
+
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+
+</body>
+
+
+</html>

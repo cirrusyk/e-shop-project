@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+
+   <div class="login-regis">
+<div class="form-regis" >
+         <h1>REGISTRATION</h1>
+       <form th:action="@{/process_register}" method="post" th:object= "${user}">
+       
+       
+       <!-- success message -->
+       <div th:if= "${param.success}">
+       <p> You have been successfully registered</p>
+       </div>
+       
+         <label for="username">Username:</label>
+         <input type="text" id="username" name="username"  maxlength=20 minlength=5 th:field = "*{username}" required placeholder="*required">
+         
+         <label for="email">E-mail:</label>
+         <input type="text" id="email" name="email" maxlength=30 minlength=5 th:field = "*{email}" required placeholder="*required">
+
+        
+         <label for="password">Password:</label>
+         <input type="password" id="password" name="password" maxlength=20 minlength=5 th:field = "*{password}" required placeholder="*required">
+
+
+         <button type="submit" name="register">Register</button>
+         
+         <span class="span already">Already registered? <a href="/" th:href= @{/login}>Login here</a></span>
+       </form>
+
+
+    </div>
+    </div>
+
+  <div th:replace="common/header :: chat"></div>
+
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:s="http://www.w3.org/1999/xhtml">
+
+
+<head th:replace="common/header :: common-header"></head>
+
+
+<body>
+
+  <div th:replace="common/header :: navbar"></div>
+
+  <div class="contact">
+    <h1>CUSTOMER SUPPORT</h1>
+    <form action="javascript:sendMail();" name="pmForm" id="pmForm" method="post">
+      <label for="subject">Title:</label>
+      <input  type="text" id="subject" name="subject"/>
+      
+      <label for="message">Message:</label>
+      <textarea  id="message" name="message"></textarea>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+
+
+  </div>
+
+  <div th:replace="common/header :: chat"></div>
+  <div th:replace="common/header :: body-bottom"></div>
+
+
+<script>
+
+
+function sendMail() {
+	var subject = document.getElementById("subject").value;
+	var message = document.getElementById("message").value;
+	   window.open('mailto:cirrus1910@gmail.com?subject=' + subject +'&body=' + message);
+	}
+
+</script>
+
+</body>
+
+
+</html>
